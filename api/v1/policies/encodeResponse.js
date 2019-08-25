@@ -1,7 +1,8 @@
 var debug = require('debug')('x-code:v1:policies:encode'),
     HttpStatus = require('http-status-codes'),
     config = rootRequire('config/global'),
-    AESCrypt = rootRequire('services/aes');
+    AESCrypt = rootRequire('services/aes'),
+    _ = require('underscore');
 
 module.exports = function(request, response, next) {
     // debug('RESPONSES:', request.sourceOfRequest, request.resbody, request.method);
@@ -29,11 +30,13 @@ module.exports = function(request, response, next) {
             request.resbody.data = '';
         }
         response
-            .send(request.resbody);
+            .status(request.resbody.statusCode || 200)
+            .send(_.omit(request.resbody, ['statusCode']));
     } else {
         // send response without encryption
         response
-            .send(request.resbody);
+            .status(request.resbody.statusCode || 200)
+            .send(_.omit(request.resbody, ['statusCode']));
     }
 
 };

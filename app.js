@@ -10,10 +10,12 @@ var debug = require('debug')('x-code:app'),
     logger = require('morgan'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
+    morgan  = require('morgan'),
 
     expressValidator = require('express-validator'),
     app = express(),
     initAPISVersions = require('./api/index.js'),
+    config = require('./config/global.js'),
     staticRoutes = require('./routes/index.js');
 
 // view engine setup
@@ -22,8 +24,18 @@ var debug = require('debug')('x-code:app'),
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
+
+//don't show the log when it is test
+if(config.NODE_ENV !== 'test') {
+    //use morgan to log at command line
+
+    app.use(morgan('combined')); //'combined' outputs the Apache style LOGs
+}
+
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

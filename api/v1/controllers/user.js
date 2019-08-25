@@ -21,7 +21,7 @@ module.exports = {
             function(nextCall) { // check required parameters
 
                 req.checkBody('email', 'Email is required').notEmpty(); // Name is required
-                req.checkBody('email', 'Email is not a valid').isEmail();
+                req.checkBody('email', 'Email is not valid').isEmail();
                 req.checkBody('password', 'Password is required').notEmpty(); // password is required
 
                 var error = req.validationErrors();
@@ -45,9 +45,10 @@ module.exports = {
                 nextCall(null, body);
             },
             function(body, nextCall) {
-
+                //Not connected with database so directly sending reponse 
                 // return the information including token as JSON
                 nextCall(null, {
+                    statusCode: 200,
                     status: 1,
                     message: 'Login successfully',
                     data: body
@@ -56,7 +57,7 @@ module.exports = {
         ], function(err, response) {
             if (err) {
                 debug('Login Error', err);
-                return res.sendToEncode({ status: 0, message: (err && err.message) || "Oops! You could not be logged in." });
+                return res.sendToEncode({ statusCode: 400, status: 0, message: (err && err.message) || "Oops! You could not be logged in." });
             }
 
             res.sendToEncode(response);

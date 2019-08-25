@@ -1,7 +1,7 @@
 module.exports = {
 
     'PORT': 3000,
-
+    'NODE_ENV' : 'test',
     'appHost': 'http://localhost:3000',
 
     'apiHost': 'http://localhost:3000/v1',
@@ -23,7 +23,7 @@ module.exports = {
 
     'secret': '#xCode*', // jwt secret key
 
-    'cryptoEnable': true,   // To enable this method
+    'cryptoEnable': false,   // To enable this method
     'cryptoKey': 'xCode2017@!secureAcc$ess',   // Secret encryption key
     'cryptoIV': 'a2xhcgAAAAAAAAAA',        // Secret encryption IV
 
