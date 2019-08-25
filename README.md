@@ -21,6 +21,19 @@
 		console.log('Message sent: ' + info.response);
 	});
 
+# Testing :
+
+1. Apply test case in test/login.test.js file
+	- login.test.js contains the test cases for login api. 
+	- Using mocha and chai we can manage all the test cases and validations
+	- To run the test script go to command line and hit the following command 
+    npm run test
+ 	- If it matches with all the case it will show you : 
+ 		![Image of SUCCESS](https://github.com/ajaxporiya/dotininfotech_node/tree/master/uploads/success.jpg)
+ 	- If it does not match with the case it will show you : 
+ 		![Image of FAIL](https://github.com/ajaxporiya/dotininfotech_node/tree/master/uploads/fail.jpg)
+
+
 
 # Push Notification :
 
