@@ -29,9 +29,9 @@
 	- To run the test script go to command line and hit the following command 
     npm run test
  	- If it matches with all the case it will show you : 
- 		![Image of SUCCESS](https://github.com/ajaxporiya/dotininfotech_node/tree/master/uploads/success.jpg)
+ 		![Image of SUCCESS](https://github.com/ajaxporiya/dotininfotech_node/blob/master/uploads/success.JPG)
  	- If it does not match with the case it will show you : 
- 		![Image of FAIL](https://github.com/ajaxporiya/dotininfotech_node/tree/master/uploads/fail.jpg)
+ 		![Image of FAIL](https://github.com/ajaxporiya/dotininfotech_node/blob/master/uploads/fail.JPG)
 
 
 
