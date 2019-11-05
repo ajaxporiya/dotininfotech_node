@@ -27,7 +27,7 @@
     "jade": "~1.11.0",
     "jsonwebtoken": "^7.1.9",
     "moment": "^2.18.1",
-    "mongoose": "^4.4.19",
+    "mongoose": "^5.7.5",
     "morgan": "~1.6.1",
     "mysql": "^2.10.2",
     "node-gcm": "^0.14.4",
